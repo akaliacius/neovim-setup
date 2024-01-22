@@ -40,4 +40,4 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- git fugitive
-keymap.set("n", "<leader>gs", vim.cmd.Git)
+--keymap.set("n", "<leader>gs", vim.cmd.Git)
