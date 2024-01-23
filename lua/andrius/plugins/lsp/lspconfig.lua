@@ -13,7 +13,7 @@ end
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -43,30 +43,36 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- configure html server
-lspconfig["html"].setup({
+-- configure bash server
+lspconfig["bashls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
--- configure css server
-lspconfig["cssls"].setup({
+-- configure clang server
+lspconfig["clangd"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+-- configure docker server
+lspconfig["dockerls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
--- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
+-- configure haskell server
+lspconfig["hls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
--- configure emmet language server
-lspconfig["emmet_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-})
+-- as example. this can be used with rust-tools i guess
+-- typescript.setup({
+--  server = {
+--    capabilities = capabilities,
+--    on_attach = on_attach
+--  }
+-- })
 
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({

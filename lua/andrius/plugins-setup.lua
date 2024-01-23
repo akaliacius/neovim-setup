@@ -57,7 +57,7 @@ return packer.startup(function(use)
 
 	-- icons
 	--	use("kyazdani42/nvim-web-devicons")
-	use("nvim-tree/nvim-web-devicons")
+	--	use("nvim-tree/nvim-web-devicons")
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
@@ -67,7 +67,7 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
 	-- autocompletion
-	use("hrsh7th/nvim-cmp") -- completion plugin
+	use("hrsh7th/nvim-cmp") -- autocompletion plugin
 	use("hrsh7th/cmp-buffer") -- source for text in buffer
 	use("hrsh7th/cmp-path") -- source for file system paths
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
@@ -89,7 +89,7 @@ return packer.startup(function(use)
 		"glepnir/lspsaga.nvim",
 		branch = "main",
 		requires = {
-			{ "nvim-tree/nvim-web-devicons" },
+			--	{ "nvim-tree/nvim-web-devicons" },
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	}) -- enhanced lsp uis
